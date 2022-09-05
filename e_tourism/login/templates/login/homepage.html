@@ -1,0 +1,318 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Travel Yantra</title>
+      <link rel = "icon" href ="{% static 'images/title.jpg' %}" type = "image/x-icon">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script>
+      <script src="{% static '/js/jquery.min.js' %}"></script>
+      <script src="{% static '/js/owl.carousel.min.js' %}"></script>
+      <link rel="stylesheet" href="{% static '/css/stylehome.css' %}">
+      <link rel="stylesheet" href="{% static '/css/owl.carousel.css' %}">
+      <link rel="stylesheet" href="{% static '/css/owl.theme.green.css' %}">
+
+      <style>
+        .bg-img {
+          /* background-image: url( "{% static 'images/bg3.jpg' %}"); */
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 100%;
+        }
+      </style>
+  
+    </head>
+  <body>
+<header>
+  {% include 'login/navbar.html' %}
+</header>
+<!-- StART OF CAROUSEL -->
+<div id="carouselExampleIndicators" class="carousel slide pt-4" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class=" carousel-img" src="images/shimla.jpg" alt="First slide">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-text pt-5">TRAVEL AROUND THE WORLD</div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100 carousel-img" src="images/maldives.jpg" alt="Second slide">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-text pt-5">TRAVEL AROUND THE WORLD</div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100 carousel-img" src="images/carousal3.jpg" alt="Third slide">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-text pt-5">TRAVEL AROUND THE WORLD</div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators"  data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators"  data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<!-- END OF CAROUSEL -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- OWL CAROUSEL 1 -->
+
+<section class="content bgbd bg-img py-2">
+<div style="background-color: white;" class="container my-4">
+    <h4 class="heading">AVAILABLE TOURS</h4>
+  <div class="owl-demo owl-carousel owl-theme">
+    <!-- CARD -->
+      {% for i in packages %}
+    <div class="card shadow-lg" >
+      <!-- CARD IMAGE -->
+      <div class="img-hover-zoom">
+          <a href="{% url 'iternary' i.name %}">
+        <img class="card-img-top image1" src="{{ i.package_pic.url }}" alt="Card image cap">
+              </a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title seg-name" style="text-transform:uppercase;" >{{i}} ECONOMY </h5>
+        </div>
+    </div>
+  <!-- END OF CARD -->
+      {% endfor %}
+  </div>
+</div>
+<br>
+<div style="background-color: white;" class="container my-4">
+  <h4 class="heading">SPECIAL TOURS</h4>
+  <div class="owl-demo owl-carousel owl-theme">
+    <!-- CARD -->
+      {% for tc in tagcards %}
+    <div class="card shadow-lg" >
+      <!-- CARD IMAGE -->
+      <div class="img-hover-zoom">
+          <a href="{% url 'tagPackage' tc %}">
+        <img class="card-img-top image1"src="{{ tc.tag_pic.url }}" alt="Card image cap">
+              </a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title seg-name" style="text-transform:uppercase;" >{{tc}} TOUR</h5>
+        </div>
+    </div>
+  <!-- END OF CARD -->
+      {% endfor %}
+  </div>
+</div>
+<!-- END OF OWL CAROUSEL 1 -->
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- START OF OWL CAROUSEL-2 -->
+<div style="background-color: white;" class="container shadow-lg my-5 p-2">
+  <p class="seg1h-name">Domestic tours</p><hr class="new1">
+  <div  id="owl-demo1" class="owl-carousel owl-theme">
+    <!-- START OF A PACKAGE -->
+    {% for d in domestic %}
+    <div class="outer-box">
+      <!-- IMAGE AND OVERLAY -->
+      <div class="box p-1">
+          <a href="{% url 'iternary' d %}">
+              <div class="homeimg">
+                  <img class="homeimg1" src="{{ d.package_pic.url }}" alt="">
+                  </div>
+              <div class="box-content">
+                  <ul class="tour-type-icon-list ">
+                      <li class="li1">
+                        <i style="color:white;font-size: medium;font-weight: bold;" title="Meals" class="fas fa-utensils mx-1"></i>
+                      </li>
+                      <li class="li1">
+                        <i style="color:white;font-size: medium;" title="Hotel reservation" class="fas fa-bed mx-1"></i>
+                      </li>
+                      <li class="li1">
+                        <i style="color:white;font-size: medium;" title="Bus commute" class="fas fa-bus mx-1"></i>
+                      </li>
+                      <li class="li1">
+                        <i style="color:white;font-size: medium;" title="Flight" class="fas fa-plane mx-1"></i>
+                      </li>
+                      <li class="li1">
+                        <i style="color:white;font-size: medium;" title="Sightseeing" class="fas fa-binoculars"></i>
+                      </li>
+                    </ul>
+                  <div class="content">
+                      
+                    <ul class="tour-card-highlight" >
+
+                            {% for dp in domesticplaces %}
+                                {% if dp.package == d %}
+                                    <li>{{ dp.name }}</li>
+                                {% endif %}
+                            {% endfor %}
+
+                    </ul>  
+                  </div>
+              </div>
+          </a>
+      </div>
+      <!-- END OF IMAGE AND OVERLAY -->
+      <!-- PACKAGE DETAILS -->
+          <div class="box-details">
+              <ul class="box_top-panel py-1 px-2">
+                  <li class="li2 tour-code">
+                      <b>{{ d.days }}</b>
+                      Days
+                  </li>
+                  <li class="li2 tour-code py-1 px-2">
+                      <b>{{ d.nights }}</b>
+                      Nights
+                  </li>
+                  <li class="li2 tour-code py-1 px-2">
+                      <b>1</b>
+                      Country
+                  </li>
+              </ul>
+              <h5 class="package-name" style="text-transform:uppercase;">{{ d.name }} ECONOMY</h5>
+          </div>
+      </div>
+      {% endfor %}
+    <!-- END OF PACKAGE -->
+  </div>
+</div>
+<!-- END OF OWL CAROUSEL-2 -->
+
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- START OF OWL CAROUSEL-3 -->
+<div style="background-color: white;" class="container shadow-lg my-5 p-2">
+  <p class="seg1h-name">International tours</p><hr class="new1">
+  <div  id="owl-demo2" class="owl-carousel owl-theme">
+    <!-- START OF A PACKAGE -->
+       {% for i in international %}
+    <div class="outer-box">
+      <!-- IMAGE AND OVERLAY -->
+      <div class="box p-1">
+          <a href="{% url 'iternary' i %}">
+              <div class="homeimg">
+                  <img class="homeimg1" src="{{ i.package_pic.url }}" alt="">
+                  </div>
+              <div class="box-content">
+                  <ul class="tour-type-icon-list ">
+                      <li class="li1">
+                        <i style="color:white;font-size: medium;font-weight: bold;" title="Meals" class="fas fa-utensils mx-1"></i>
+                      </li>
+                      <li class="li1">
+                        <i style="color:white;font-size: medium;" title="Hotel reservation" class="fas fa-bed mx-1"></i>
+                      </li>
+                      <li class="li1">
+                        <i style="color:white;font-size: medium;" title="Bus commute" class="fas fa-bus mx-1"></i>
+                      </li>
+                      <li class="li1">
+                        <i style="color:white;font-size: medium;" title="Flight" class="fas fa-plane mx-1"></i>
+                      </li>
+                      <li class="li1">
+                        <i style="color:white;font-size: medium;" title="Sightseeing" class="fas fa-binoculars"></i>
+                      </li>
+                    </ul>
+                  <div class="content">
+                      
+                    <ul class="tour-card-highlight" >
+                        {% for ip in internationalplaces %}
+                                {% if ip.package == i %}
+                                    <li>{{ ip.name }}</li>
+                                {% endif %}
+                            {% endfor %}
+                    </ul>  
+                  </div>
+              </div>
+          </a>
+      </div>
+      <!-- END OF IMAGE AND OVERLAY -->
+      <!-- PACKAGE DETAILS -->
+          <div class="box-details">
+              <ul class="box_top-panel py-1">
+                  <li class="li2 tour-code">
+                      <b>{{ i.days }}</b>
+                      Days
+                  </li>
+                  <li class="li2 tour-code py-1 px-2">
+                      <b>{{ i.nights }}</b>
+                      Nights
+                  </li>
+                  <li class="li2 tour-code py-1 px-2">
+                      <b>1</b>
+                      Country
+                  </li>
+  
+              </ul>
+              <h5 class="package-name" style="text-transform:uppercase;">{{ i.name }} ECONOMY</h5>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+</section>
+<!-- END OF OWL CAROUSEL-2 -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<script>
+  $(document).ready(function(){
+      
+  $('.owl-demo').owlCarousel({
+    items:4,
+    margin:30,
+    loop:true,
+    nav:false,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+  });
+
+  $('#owl-demo1,#owl-demo2').owlCarousel({
+    items:3,
+    margin:30,
+    loop:false,
+    nav:true,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:true
+        },
+        1000:{
+            items:4,
+            nav:true,
+            loop:false
+        }
+    }
+  });
+})
+</script>
+  {% include 'login/footer.html' %}
+</body>
+
+</html>

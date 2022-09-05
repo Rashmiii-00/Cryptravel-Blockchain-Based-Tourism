@@ -1,0 +1,76 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Travel Yantra</title>
+	<link rel = "icon" href ="{% static 'images/title.jpg' %}" type = "image/x-icon">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link href="{% static 'css/styles.css' %}" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="{% static 'css/common-css.css' %}" media="all">
+
+
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <style>
+        .users {
+        table-layout: fixed;
+        width: 100%;
+        white-space: nowrap;
+        background-color: black;
+        color: #C2E049;
+        }
+        tr:hover{
+          background-color: black;
+          color: white !important;
+        }
+        .users td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        }
+    </style>
+    
+</head>
+
+<body class="bg-img">
+<header>{% include 'login/navbar.html' %}
+</header>
+<div class="container-fluid pt-5 bg-img">
+    <br><br>
+    <!-- <h6 class="pt-5"><b>Your Public Key is:</b> {{ pkey}}</h6> -->
+    <h6><b>Your wallet Address is:</b> {{ trans.address }}</h6>
+
+<table class="table table-hover users mt-4 table-fit">
+    <thead>
+      <tr>
+        <th class="col-lg-1">Category</th>
+        <th class="col-lg-1">Amount</th>
+        <th class="col-lg-1">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in transact %}
+      <tr>
+        <td>{{i.category}}</td>
+        <td>{{i.amount}}</td>
+        <td>{{i.date_created}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+<div class="justify-content-center" style="text-align: center;">
+<a type="button" style="color: black;" href= "{% url 'blockchain' %}" class="btn btn-lg btn-primary m-1">View Blockchain</a>
+</div>
+</div>
+{% include 'login/footer.html' %}
+ 
+</body>
+</html>

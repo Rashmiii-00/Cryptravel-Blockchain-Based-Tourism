@@ -1,0 +1,51 @@
+
+{% load static %}
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+  <style>
+  body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+  .hello-msg{
+    font-size: 18px;
+    color: white;
+    margin-right: 20px;
+  }
+  .hello-msg a:hover{
+    color: powderblue;
+  }
+  </style>
+<nav class="navbar navbar-expand-lg  n fixed-top">
+   <img class="logo" src="/images/navbarlogo.jpg">
+   <a class="nav-link menu" style="font-weight:bold">Hello, {{request.user}}</a>
+  <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  {% if messages %}
+  {% for msg in messages  %}
+	<span style="margin-left: 250px; color: white; p">{{msg}}</span>
+	{%  endfor  %}
+  {% endif %}
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+    <ul class="navbar-nav ">
+      <li class="nav-item active">
+        <a class="nav-link menu" href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link menu" href="{% url 'myTrips' %}">My trips</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link menu" href="{% url 'buyExtraCoins' %}">Coins</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link menu" href="{%  url 'transaction' %}">Transactions</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link menu" href="{%  url 'logout' %}">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</head>

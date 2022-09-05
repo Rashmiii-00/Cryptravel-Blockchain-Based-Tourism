@@ -1,0 +1,116 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	{% load static %}
+	<title>Travel Yantra</title>
+	<link rel = "icon" href ="{% static 'images/title.jpg' %}" type = "image/x-icon">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+	<link href="{% static 'css/style1.css' %}" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="{% static 'css/fwslider.css' %}" media="all">
+	<link rel="stylesheet" href="{% static 'css/common-css.css' %}" media="all">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<style>
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+		.bg-img {
+          background-image: url( "{% static 'images/bg3.jpg' %}");
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  height: 100%;
+        }
+
+		/*
+		.btn-primary:hover{
+			
+		}
+*/
+
+	</style>
+</head>
+
+<body>
+	<header>{% include 'login/navbar.html' %}</header>
+	<section class="form bg-main-green bg-img" style="padding:50px; line-height:30px; " id="pay-coin-form">
+		<div class="container pt-4">
+			<div class="row">
+				<div class="col-10 mx-auto pt-5">
+					<div class="card shadow bg-dark" style="">
+						<div class="row justify-content-center">
+							<div class="col-md-8 m-5 ">
+								<h4 class="section-heading font-size-35">Book Package</h4>
+								<p class="text-center ">
+									Pay the coins and book your package.
+								</p>
+							</div>
+						</div>
+
+						<form class="row g-3 gx-5 justify-content-center" method="post">
+							{% csrf_token %}
+							<div class="col-md-10">
+								<div class="row">
+									<div class="col-md-6 mb-3">
+										<label for="amount">Package Amount in Trackos</label>
+										<input type="text" class="form-control" placeholder="{{ pack.price }}" disabled>
+									</div>
+									<div class="col-md-6 mb-3">
+										<label for="amount">User Account Balance</label>
+										<input type="text" class="form-control" placeholder="{{ userbal }}" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<table class="table table-bordered text-light">
+										<tbody>
+											<tr>
+												<td>No of People</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>Per person Cost (in Trackos)</td>
+												<td>{{ pack.price }}</td>
+											</tr>
+											<tr>
+												<!-- class="table-active"-->
+												<td>Total Cost (in Trackos)</td>
+												<td>{{ pack.price }}</td>
+											</tr>
+										</tbody>
+									</table>
+										<input class="btn btn-primary btn-lg btn-block mb-5" type="submit" name="ConfirmBooking" value="Confirm Booking">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% include 'login/footer.html' %}
+
+</body>
+
+</html>

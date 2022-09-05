@@ -1,0 +1,393 @@
+.menu{
+    margin:10px;
+    color:white;
+}
+.menu:hover{
+    background-color: #C2E049;
+    color: black;
+}
+a:active
+{
+    background-color:#C2E049;
+}
+.n{
+    background-color: black;
+}
+.logo{
+    height:60px;
+}
+
+.subpack
+{
+font-size: 12px;
+background-color: #FAEF36;
+}
+.country{
+    height:10px;
+    width:10px;
+}
+.package-name
+{
+    text-align: center;
+    font-size: 15px;
+}
+.button{
+    font-size: 10px;
+    font-weight: bold;
+    background-color: black;
+    color:white;
+    width:100%;
+}
+.button:hover
+{
+    background-color: #C2E049;
+    color: black;
+    font-weight: bold;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.carousel-img{
+    min-width:100%;
+    max-width: 100%;
+    min-height: 50vh;
+    max-height:50vh;
+    overflow:hidden;
+}
+.heading{
+    text-align: center;
+    font-weight: bold;
+    color:#C2E049;
+}
+.spl{
+    overflow-x: scroll;
+}
+
+h4 {
+    display: flex;
+    flex-direction: row;
+}
+h4:before, h4:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 2px solid #000;
+    margin: auto;
+}
+.seg-name{
+    text-align: center;
+    font-size: 15px;
+}
+hr.new1{
+    border: 1px solid #FAEF36;
+}
+.seg1h-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+span{
+    font-size: 20px;
+}
+.custom-toggler .navbar-toggler{
+    border-color: #FAEF36;
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(250, 239, 54, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.image1{
+    height: 100%;
+    width:100%
+}
+.carousel-control-next:focus,.carousel-control-prev:focus{
+    background:none;
+    background-color: none;
+    outline:none;
+
+}
+.card-img-top{
+    height:250px;
+}
+.ricon{
+    position:relative;
+    right:0%;
+    top:0%;
+}
+.tour-type-icon-list{
+    position:absolute;
+    top: 1px;
+    right: 5px;
+
+}
+.tour-type-icon-list,.tour-card-highlight {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 5px;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.li1{
+    display: inline;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .homeimg{
+    width: 100%;
+    min-height:200px;
+    height: 200px;
+  }
+  .homeimg1{
+    width: 100%;
+    height: 100%;
+  }
+*{
+    box-sizing: border-box;
+}
+.box{
+    width:100%;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+}
+.box .box-content{
+    
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+
+}
+.box .box-content:before,
+.box .box-content:after{
+    content:"";
+    width:98%;
+    height:47%;
+    background: black;
+    position:absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    transition:all 0.5s;
+    opacity:0;
+}
+.box .box-content:before{
+    top: -20%;
+}
+.box .box-content:after{
+    bottom: -20%;
+}
+.box:hover .box-content:before{
+    top: 3%;
+    opacity:0.6;
+}
+.box:hover .box-content:after{
+    bottom: 3%;
+    opacity:0.6;
+}
+.box:focus .box-content:before{
+    top: 3%;
+    opacity:0.6;
+}
+.box:focus .box-content:after{
+    bottom: 3%;
+    opacity:0.6;
+}
+.box .content{
+    width:100%;
+    height:45px;
+    top:25%;
+    left:25%;
+    position:absolute;
+    margin:auto;
+    z-index:1;
+    color:white;
+    align-content: center;
+    opacity:0;
+    transform:rotate(-90deg);
+    transition: all 0.5s;
+    font-size: small;
+}
+.box:hover .content{
+    opacity:1;
+    transform:rotate(0deg);
+}
+.box:focus .content{
+    opacity:1;
+    transform:rotate(0deg);
+}
+.box .tour-card-highlight{
+    padding:0;
+    margin: 0 0 20px 0;
+    list-style: square;
+}
+.box-top-panel{
+    list-style: none;
+}
+.outer-box{
+    
+    width:100%;
+    background-color: white;
+    box-shadow: 3px 3px 3px grey;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 4px;
+
+}
+/* .box-details{
+    background-color: #bababa;
+} */
+.box_top-panel{
+   
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0px;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    font-size: small;
+    background-color: #bababa;
+}
+.li2{
+    display:inline;
+    margin:5px;
+    text-align: -webkit-match-parent;
+}
+.tour-code{
+    background-color:black;
+    color:#C2E049;
+    padding: 4px 3px;
+}
+.trip_container{
+    
+  position: relative;
+}
+.trips_box{
+    height:250px;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.trips_box {
+    display: block;
+    width: 100%;
+  }
+  
+  .trip_middle {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: black;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+  }
+  
+  .trip_container:hover .trip_middle {
+    bottom: 0;
+    height: 100%;
+  }
+  .trip_container:focus .trip_middle {
+    bottom: 0;
+    height: 100%;
+  }
+  
+  .trip_text {
+    color: #C2E049;
+    font-size: 30px;
+    font-weight: bolder;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .trip_icon{
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      margin:auto;
+  }
+  .t-t{
+      position:absolute;
+      bottom:0px;
+      left:0px;
+      right:0px;
+      margin-bottom: 3px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+  }
+  .bgbd{
+      background-image: url(images/bg6.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+  .carousel-overlay{
+      position:absolute;
+      width:100%;
+      height:100%;
+      left:0;
+      right:0;
+      top:0;
+      bottom:0;
+      background-image: linear-gradient(to right,black,#969696,black);
+      opacity:0.6;
+  }
+  .carousel-text{
+    position:absolute;
+    left:0;
+    right:0;
+    top:40%;
+    bottom:0;
+    color: white;
+    font-size: 40px;
+    font-weight:bolder;
+    text-align: center;
+
+}
+.carousel-item{
+    text-align: center;
+    align-content: center;
+}
+.card{
+    overflow:hidden;
+}
+.img-hover-zoom:hover .image1{
+    transform: scale(1.4);
+}
+.img-hover-zoom .image1{
+    transition: transform .5s ease;
+}
+.img-hover-zoom{
+    
+    height: 250px;
+    width:100%;
+    overflow:hidden;
+}
+.img-hover-zoom:focus .image1{
+    transform: scale(1.4);
+}
+.carousel-button{
+    position:absolute;
+    top:40%;
+    background-color:#C2E049;
+    font-size: 20px;
+    padding:8px;
+    margin:5px;
+    text-align: center;
+    border-radius:5px;
+}

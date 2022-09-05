@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Yantra</title>
+    <link rel = "icon" href ="{% static 'images/title.jpg' %}" type = "image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  .bg-img {
+          /* background-image: url( "{% static 'images/bg3.jpg' %}"); */
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  height: 100%;
+        }
+</style>
+
+</head>
+<body>
+    <header>
+      {% include 'login/navbar.html' %}
+    </header>
+    <section>
+        <div class="container-fluid mt-5 bg-img">
+            <div class="row">
+              <!-- CARD -->
+              {% for i in filterpackages %}
+
+                <div class="col-md-3 col-sm-12 mb-5 pt-5">
+                    <div class="card shadow" >
+                      <!-- CARD IMAGE -->
+                        <a href="{% url 'iternary' i.name %}">
+<!--                      <img class="card-img-top" src="{{ i.package_pic.url }}" alt="Card image cap">-->
+                            <div class="card-img-top">
+                                <img class="homeimg1" src="{{ i.package_pic.url }}" alt="">
+                            </div>
+                        </a>
+                        <div class="container-fluid">
+                          <div class="row mt-1 subpack">
+                            <div class="col-sm-4 p-1">
+                              <b>{{ i.nights }}</b>  Nights
+                            </div>
+                            <div class="col-sm-4 p-1">
+                              <b>{{ i.days }}</b>   Days
+                            </div>
+                              <div class="col-sm-4 p-1">
+                              <b>{{ i.category }}</b>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- END OF SMALL DETAILS -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class ="col-sm-7">
+                                    <h5><b>{{ i.name }}</b></h5>
+                                </div>
+                                <div class="col-sm-5">
+                                    <a href="{% url 'iternary' i.name %}" class="btn btn-lg button" style="font-size:15px;">Book</a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <!-- END OF CARD -->
+              {% endfor %}
+            </div>
+        </div>
+    </section>
+    <div>
+        {% include 'login/footer.html' %}
+    </div>
+</body>
+</html>

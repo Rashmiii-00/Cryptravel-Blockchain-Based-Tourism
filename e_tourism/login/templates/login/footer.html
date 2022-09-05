@@ -1,0 +1,51 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Footer</title>
+</head>
+<body>
+
+	<div class="footer">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-3">
+					<img src="{% static 'images/logo.jpg' %}" alt="" style="max-width: 100%; margin-left: -30px;">
+				</div>
+				<div class="col-md-3">
+					<ul class="footer_box">
+						<h4 class="text-main-green">QUICK LINKS</h4>
+						<li style="font-size: 1.2rem;"><a href="{% url 'home' %}" class="text-main-green">HOME</a></li>
+						<li style="font-size: 1.2rem;"><a href="{% url 'contact' %}" class="text-main-green">CONTACT US</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<ul class="footer_box">
+						<h4 class="text-main-green">Popular Destinations</h4>
+						<li style="font-size: 1.2rem;" class="text-uppercase"><a href="#" class="text-main-green">Varanasi</a></li>
+						<li style="font-size: 1.2rem;" class="text-uppercase"><a href="#" class="text-main-green">Rajasthan</a></li>
+						<li style="font-size: 1.2rem;" class="text-uppercase"><a href="#" class="text-main-green">Kashmir</a></li>
+						<li style="font-size: 1.2rem;" class="text-uppercase"><a href="#" class="text-main-green">Manali</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<ul class="footer_box ">
+						<h4 class="text-main-green">Connect with us on </h4>
+						<ul class="social text-main-green">
+							<li class="facebook"><a href="#" style="font-size: 1.3rem;"><i class="fab fa-facebook  text-main-green"></i></a></li>
+							<li class="facebook"><a href="#" style="font-size: 1.3rem;"><i class="fab fa-twitter  text-main-green"></i></a></li>
+							<li class="facebook"><a href="#" style="font-size: 1.3rem;"><i class="fab fa-instagram  text-main-green"></i></a></li>
+							<li class="facebook"><a href="#" style="font-size: 1.3rem;"><i class="fab fa-pinterest-p  text-main-green"></i></a></li>
+							<li class="facebook"><a href="#" style="font-size: 1.3rem;"><i class="fab fa-youtube  text-main-green"></i></a></li>
+						</ul>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

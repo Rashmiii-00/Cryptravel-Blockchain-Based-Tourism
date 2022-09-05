@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	{% load static %}
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Travel Yantra</title>
+	<link rel = "icon" href ="{% static 'images/title.jpg' %}" type = "image/x-icon">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+	<link href="{% static 'css/styles.css' %}" rel='stylesheet' type='text/css' />
+
+
+	<script type="application/x-javascript">
+		addEventListener("load", function() {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+
+	</script>
+	<script>
+		(function($) {
+			'use strict';
+
+			jQuery(document).on('ready', function() {
+
+				$('a.page-scroll').on('click', function(e) {
+					var anchor = $(this);
+					$('html, body').stop().animate({
+						scrollTop: $(anchor.attr('href')).offset().top - 50
+					}, 1500);
+					e.preventDefault();
+				});
+
+			});
+
+
+		})(jQuery);
+
+	</script>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!--start slider -->
+	<link rel="stylesheet" href="{% static 'css/fwslider.css' %}" media="all">
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<script src="{% static 'js/fwslider.js' %}"></script>
+	<!--end slider -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style>
+		/* Make the image fully responsive */
+
+		.carousel-inner img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.overlay {
+			opacity: 0.3;
+		}
+
+		.width-100 {
+			width: 100%;
+		}
+
+		.text-center {
+			text-align: center !important;
+		}
+
+		.place-names,
+		.display-7 {
+			font-size: 1.5rem;
+			font-weight: 400;
+			line-height: 1.2;
+			text-align: center;
+			color: #C2E049;
+		}
+
+		.bg-main-green {
+			background-color: #C2E049 !important;
+			color: black !important;
+		}
+
+		.itinerary-card {
+			/*
+			padding-left: 0;
+			padding-right: 0;
+*/
+			width: 100%;
+			border: none;
+			/*
+			margin-left: 0;
+			margin-right: 0;
+*/
+		}
+
+		.m-b-10 {
+			margin-bottom: 10px;
+		}
+
+		.itinerary-icon {
+			font-size: 1rem;
+			line-height: 1.2rem;
+			text-align: center;
+		}
+
+		.col-icon {
+			padding-right: 0;
+			text-align: center;
+
+		}
+
+		.right-icon {
+			text-align: right;
+			color: #C0E549;
+		}
+
+		.right-icon .fa {
+			margin-right: 5px;
+			margin-left: 10px;
+		}
+
+		.radio {
+			margin: 10px;
+		}
+
+		.radio input[type="radio"] {
+			opacity: 0;
+			position: fixed;
+			width: 0;
+		}
+
+		.radio label {
+			display: inline-block;
+			background-color: #C2E049;
+			padding: 10px 10px;
+			font-family: courier;
+			font-size: 16px;
+			border: 2px solid black;
+			border-radius: 4px;
+			color: black;
+			font-weight: bold;
+		}
+
+		.radio input[type="radio"]:focus+label {
+			border: 2px solid #C2E049;
+		}
+
+		.radio input[type="radio"]:checked+label {
+			background-color: black;
+			border-color: black;
+			font-weight: bold;
+			color: #C2E049;
+		}
+
+		.hr {
+			height: 10px;
+		}
+
+		.three {
+			text-align: left;
+		}
+
+		.bg_image {
+			background-image: url("brushedmetal01.png");
+			background-size: cover;
+			position: relative;
+		}
+
+		.abc {
+			border: none;
+		}
+
+	</style>
+</head>
+
+<body>
+	<header>
+		{% include 'login/navbar.html' %}
+	</header>
+
+	<div class="container common-container">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="card itinerary-card shadow-lg my-3">
+					<div class="card-body">
+						<div class="img" style="height=80vh">
+							<img src="{{ package.package_pic.url }}" style="width: 100%;">
+						</div>
+
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="page-heading pt-3">
+									<h5 class="card-title section-heading float-left" style="font-family: 'RocknRoll One', sans-serif; font-size:50px;">{{ package.name }}</h5>
+		
+								</div>
+
+							</div>
+							<div class="col-sm-4 pt-4">
+								<form method="post">
+									{% csrf_token %}
+									<input class="me-md-2 btn button btn-primary" type="submit" name="bookNow" value="Book Now" style="font-size: 20px;color: black;">
+							</div>
+						</div>
+						
+						<div class="row mt-4">
+							<div class="col-12">
+								<div class="row">
+									<div class="col-1 col-icon">
+										<h6 class="card-subtitle mb-2 " style="font-size: x-large;"><i class="fa fa-calendar "></i></h6>
+									</div>
+									<div class="col-9">
+										<h5 class="card-subtitle mb-4 px-4 text-muted"><b>{{ package.days }} Days, {{ package.nights }} Nights</b></h5>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-1 col-icon">
+										<h5 class="card-subtitle"><i class="fa fa-utensil-spoon " style="font-size: x-large;"></i></h5>
+									</div>
+									<div class="col-9">
+										<h5 class="card-subtitle mb-4 px-4 text-muted"><b>Food included</b></h5>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-1 col-icon">
+										<h3 class="card-subtitle mb-2" style="font-size: x-large;"><i class="fab fa-bitcoin "></i></h3>
+									</div>
+									<div class="col-9">
+										<h5 class="card-subtitle mb-2 px-4 text-muted"><b>{{ package.price }} Trackos</b></h5>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+						<br><br>
+						<div class="row m-b-10">
+							<h3 class="pl-2 text-muted"><b>Select a month below:</b></h3>
+							<div class="col-12">
+								<div class="row">
+									{% for month in months %}
+									<div class="radio">
+										<input type="radio" id="{{month}}" name="monsel" value="{{ month }}" class="btn btn-md bg-main-green" required checked>
+										<label for="{{month}}">{{ month }}</label>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+						</form>
+						<br>
+
+						<h4 class="section-subheading " style="color: #C2E049;"><b>Itinerary</b></h4>
+
+						<div id="accordion" class="accordion shadow">
+
+							<div class="card mb-0">
+								{% for day in days %}
+								<div class="card-header collapsed accordion-button " data-toggle="collapse" href="#collapseOne">
+
+									<a class="card-title" style="color:black;">
+										Day {{ day.dayno }}
+									</a>
+								</div>
+
+								<div id="collapseOne" class="card-body collapse" data-parent="#accordion">
+									<div class="row">
+
+										<div class="col-md-5">
+											<img src="{{ day.day_pic.url }}" alt="" class="img-responsive width-100">
+										</div>
+
+										<div class="col-md-7 text-justify ">
+
+											<br>
+											
+											{{ day.desc }}
+											<br>
+											<strong>Extra Topping: </strong> Tea / Coffee / Soft drinks in {{ package.name }}.
+											<br>
+											<div class="right-icon">
+												<i class="fa fa-utensils"></i>Dinner
+											</div>
+										</div>
+										<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+
+										</div>
+
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+
+						</div>
+						<br>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 mt-5" style="align-content: center;">
+				<div class="card shadow">
+					<div class="card-content p-3">
+						<a href="{% url 'contact' %}"><h5 style="color:black;" class="section-subheading pb-2">Got Any Queries? Contact Us</h5></a>
+						<p class="text-justify text-muted pb-3">
+							We are more than happy to help you, kindly call or email us and we will assist you with best of our services.
+						</p>
+						<div class="row">
+							<div class="col-1 col-icon">
+								<h6 class="card-subtitle mb-2 " style="font-size: x-large;"><i class="fa fa-phone"></i></h6>
+							</div>
+							<div class="col-11">
+								<h6 class="card-subtitle mb-4 mx-3 text-muted"><b>+91 9800098000</b></h6>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-1 col-icon">
+								<h6 class="card-subtitle mb-2 " style="font-size: x-large;"><i class="fa fa-envelope"></i></h6>
+							</div>
+							<div class="col-11">
+								<a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=support@gmail.com" style="color:black ;"target="_blank"><h6 class="card-subtitle mb-4 mx-3 text-muted"><b>support@gmail.com</b></h6></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	{% include 'login/footer.html' %}
+</body>
+
+</html>

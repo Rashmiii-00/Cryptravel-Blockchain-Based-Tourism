@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Travel Yantra</title>
+	<link rel = "icon" href ="{% static 'images/title.jpg' %}" type = "image/x-icon">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link href="{% static 'css/styles.css' %}" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="{% static 'css/common-css.css' %}" media="all">
+
+
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <style>
+        .users {
+        table-layout: fixed;
+        width: 100%;
+        white-space: nowrap;
+        background-color: black;
+        color: #C2E049;
+        }
+        tr:hover{
+          background-color: black;
+          color: white !important;
+        }
+        #hr{
+            border-top: 1px solid black;
+        }
+        
+    </style>
+    
+</head>
+
+<body class="bg-img">
+<header>{% include 'login/navbar.html' %}
+</header>
+<div class="container-fluid pt-5 mt-5">
+
+        {% for i in block %}
+          <tr>{{ i }}</tr>
+          <hr id="hr">
+        {% endfor %}
+     
+
+ </div>
+ {% include 'login/footer.html' %}
+ </body>

@@ -1,0 +1,288 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Travel Yantra</title>
+	<link rel = "icon" href ="{% static 'images/title.jpg' %}" type = "image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<link rel="stylesheet" href='style.css'>
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/owl.theme.green.css">
+
+	<style>
+.seg1h-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+hr.new1{
+    border: 1px solid #FAEF36;
+}
+.liborder{
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: black;
+    color: #C2E049;
+    font-size: 18px;
+    transition: 0.2s;
+    border: white 3px;
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .liborder{
+  border: #baba 3px solid;
+
+  }
+
+  /* Set all odd list items to a different color (zebra-stripes) */
+  /* ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+   */
+  /* Darker background-color on hover */
+  .liborder:hover {
+    background: black;
+    color:white;
+  }
+
+  /* When clicked on, add a background color and strike out text */
+  .liborder.checked {
+  	padding-bottom : 5px;
+    background: #C2E049;
+    color:black;
+    border: black 3px solid;
+    text-decoration: line-through;
+  }
+
+  .popup-overlay {
+  /*Hides pop-up when there is no "active" class*/
+  visibility: hidden;
+  position: absolute;
+  background: #ffffff;
+  border: 3px solid #666666;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+}
+
+.popup-overlay.active {
+  /*displays pop-up when "active" class is present*/
+  visibility: visible;
+  text-align: center;
+}
+
+.popup-content {
+  /*Hides pop-up content when there is no "active" class */
+  visibility: hidden;
+}
+
+.popup-content.active {
+  /*Shows pop-up content when "active" class is present */
+  visibility: visible;
+}
+
+/* #submit {
+	margin-right:1000px;
+	float:right;
+	margin-top:15px;
+	color:black;
+	background-color:#C2E049;
+	font-size:30px;
+} */
+.bg-img {
+          background-image: url( "{% static 'images/bg3.jpg' %}");
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  height: 100%;
+        }
+.section-heading-1 {
+	color: black !important;
+	/*    font-size: 4em;*/
+	font-size: 45px;
+	/*    font-weight: 400;*/
+	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	margin-bottom: 2%;
+}
+.body-hide {
+	opacity: 1;
+}
+.modal-popup {
+	z-index: 1000;
+	display: block;
+	width: 500px;
+	height: 440px;
+	position: fixed;
+	top: 90px;
+    left: 400px;
+	background-color: wheat;
+}
+.hidden-popup {
+	display: none;
+}
+.submit-button{
+	justify-content: center;
+	text-align: center;
+	margin: auto;
+	display: flex;
+	color:black;
+	font-size:30px;
+
+}
+.image-pos {
+	justify-content: center;
+	text-align: center;
+	margin: auto;
+	display: flex;
+	
+}
+.place-name {
+	color: black;
+	font-weight: bold;
+	font-size:30px ;
+	text-align: center;
+	text-transform: uppercase;
+	
+}
+	</style>
+</head>
+
+<body>
+	<div class="hidden-popup">
+			<img class="image-pos" style="width: 350px; height: 300px;" src="{% static '/images/qrcode.png' %}">
+			<br>
+			<div class="place-name pb-2"></div>
+			<button style="float: right;" class=" mr-3 submit-button button-ok btn btn-primary" type="submit">OK</button>
+	</div>
+	<header>
+ 		{% include 'login/navbar.html' %}
+	</header>
+
+	<div class="container-fluid pb-3 bg-img" style="padding-top:150px;">
+		<div class="row">
+			<div class="col-11 mx-auto">
+				<h2 class="section-heading-1" style="color: black;">What next?</h2>
+				<hr class="new1">
+				<ul class="m-2" style="list-style-type: none; padding-inline-start: 0px;" id="myUL">
+					{% for place in places %}
+
+					<li class="liborder">
+						<span><i style="color:#C2E049; margin-right:8px;" class="float-left fas fa-map-marker-alt fa-2x"></i></span>
+						<h3 id="input_{{ place }}">{{ place }}
+
+						<button style="color:black; background-color:#C2E049;" class="float-right" onclick="modalFunction('input_{{place}}','{{clicks}}')">
+						
+							 <h3>Visit!</h3></button></h3>
+					</li>
+					{% endfor %}
+					<div class="submit-button">
+					<form method="post">
+						{% csrf_token %}
+						<input id="submit" class="btn btn-lg btn-primary" style="color:black; background-color:#C2E049;" type="submit" name="submit" value="Submit" disabled>
+					</form>
+				</div>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="exampleModal" data-keyboard="false" data-backdrop="static"
+            tabindex="-1" 
+            aria-labelledby="exampleModalLabel" 
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" 
+                            id="exampleModalLabel">
+                            Student Data
+                        </h5>
+                          
+                        <button type="button" 
+                            class="close" 
+                            data-dismiss="modal" 
+                            aria-label="Close">
+  
+                            <span aria-hidden="true">
+                                ×
+                            </span>
+                        </button>
+                    </div>
+  
+                    <div class="modal-body">
+  
+                        <!-- Data passed is displayed
+                            in this part of the 
+                            modal body -->
+							<p id="modal_body"></p>
+							
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+	<div>
+	{% include 'login/footer.html' %}
+		</div>
+		<script>
+
+			function modalFunction(id,clicks) {
+				var name = "";
+				for (var i = 6; i < id.length; i++) {
+					name += id[i];				
+				}
+				console.log(name);
+				var d = document.getElementsByClassName('hidden-popup')[0];
+				// var dis = document.getElementById('display');
+				// d.appendChild(dis);
+				document.getElementsByClassName('place-name')[0].innerHTML = name;
+				d.classList.add('modal-popup');
+				d.classList.remove('hidden-popup');
+				document.getElementsByTagName('body')[0].classList.add('body-hide');
+				document.getElementById(id).style.textDecoration = 'line-through';
+				document.getElementById(id).style.pointerEvents = 'none';
+				console.log("hello");
+				if (name == clicks){
+					btn = document.getElementById('submit');
+					btn.disabled = false;
+				};
+				
+				
+
+			}
+			document.getElementsByClassName('button-ok')[0].addEventListener('click', close);
+
+			function close(){
+				// console.log("sbcsznxm");
+				var d = document.getElementsByClassName('modal-popup')[0];
+				d.classList.remove('modal-popup');
+				d.classList.add('hidden-popup');
+				document.getElementsByTagName('body')[0].classList.remove('body-hide');
+
+
+			}
+
+
+			
+        
+			
+		</script>
+</body>
+
+</html>

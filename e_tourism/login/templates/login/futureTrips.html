@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Yantra</title>
+    <link rel = "icon" href ="{% static 'images/title.jpg' %}" type = "image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <header>
+        {% include 'login/navbar.html' %}
+      </header>
+
+      <section>
+        <div class="container-fluid mt-5 bg-img">
+            <div class="row">
+              <!-- CARD -->
+              {% for i in book %}
+
+                <div class="col-md-3 col-sm-12 mb-5 pt-5">
+                    <div class="card shadow" >
+                      <!-- CARD IMAGE -->
+<!--                      <img class="card-img-top" src="{{ i.package_pic.url }}" alt="Card image cap">-->
+                            <div class="card-img-top">
+                                <img class="homeimg1" src="{{ i.pack_pic.url }}" alt="">
+                            </div>
+                        <div class="container-fluid">
+                          <div class="row mt-1 subpack">
+
+                              <div class="col-lg-6 p-1" style="text-align: center;">
+                              <b>{{ i.month }}</b>
+                            </div>
+                            <div class="col-lg-6 p-1" style="text-align: center;">
+                                <b>{{ i.price }} Trackos</b>
+                              </div>
+                            
+                          </div>
+                        </div>
+                        <!-- END OF SMALL DETAILS -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class ="col-sm-12">
+                                    <h5 style="text-align: center;"><b>{{ i.pname }}</b></h5>
+                                </div>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <!-- END OF CARD -->
+              {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <div>
+        {% include 'login/footer.html' %}
+    </div>
+</body>
+</html>

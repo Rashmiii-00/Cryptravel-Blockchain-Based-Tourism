@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Travel Yantra</title>
+        <link rel = "icon" href ="{% static 'images/title.jpg' %}" type = "image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="{% static '/css/styles.css' %}">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+        <style>
+
+            .bg-img {
+          background-image: url( "{% static 'images/bg3.jpg' %}");
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  height: 100%;
+        }
+        </style>
+    </head>
+    <body>
+        <header>{% include 'login/navbar.html' %}</header>
+        <section class="bg-main-green bg-img pt-5" >
+        <div class="container pt-5">
+            <h1 style="font-family: 'RocknRoll One', sans-serif; font-size:52px; text-align:center;">CONTACT US</h1>
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="card shadow-lg p-3 mb-5 bg-black rounded pt-5 mb-3" style="width: 22rem; background-color: black;">
+                        <div style="text-align:center;">
+                            <h1 style="color:white ;font-style:bold;"><i class="fa fa-user fa-3x"></i></h1>
+                        </div>
+                        <div class="card-body">
+                            <h1 style="color:white ; font-size:42px ; font-style:bold; text-align:center;"><b>John Doe</b></h1>
+                            <p style="font-size: 20px; color: white;"><span><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></span><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=john.doe@ves.ac.in" style="color:white ;"target="_blank"><b> john.doe@ves.ac.in </b></a><br>
+                            <span style="color: white;><i style="color: white;" class="fa fa-phone fa-lg" aria-hidden="true"></i></span> <b> 9999000999</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4"></div>
+                <div class="col-lg-4 col-md-4">
+            <div class="card shadow-lg p-3 mb-5 bg-black rounded pt-5 mb-3" style="width: 22rem; background-color: black;" >
+                <div style="text-align:center;">
+                    <h1 style="color:white ;font-style:bold;"><i class="fa fa-user fa-3x"></i></h1>
+                </div>
+              <div class="card-body">
+                <h1 style="color:white ; font-size:42px ; font-style:bold; text-align:center;"><b>Micheal Scott</b></h1>
+                <p style="font-size: 20px; color: white;"><span><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></span><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=micheal.scott@ves.ac.in" style="color:white ;"target="_blank"><b> micheal.scott@ves.ac.in</b></a><br>
+                    <span style="color: white;"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></span> <b>7775566220</b></p>
+              </div>
+            </div>
+                </div>
+            </div>
+             </div>
+                {% include 'login/footer.html' %}
+        </section>
+    </body>
+</html>

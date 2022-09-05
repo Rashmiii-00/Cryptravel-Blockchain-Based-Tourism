@@ -1,0 +1,135 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	{% load static %}
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Travel Yantra</title>
+	<link rel = "icon" href ="{% static 'images/title.jpg' %}" type = "image/x-icon">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link href="{% static 'css/styles.css' %}" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="{% static 'css/common-css.css' %}" media="all">
+
+
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script>
+		function validateForm(){  
+		var card_no=document.forms["cform"]["cardno"].value;  
+		var cvv_no=document.forms["cform"]["cvv"].value;
+		
+		if (cvv_no.length!=3){  
+			document.getElementById("errorcvv").innerHTML="Invalid CVV!";  
+		return false;  
+		}
+		if(card_no.length!=16){  
+			document.getElementById("errorcardno").innerHTML="Invalid card number!";
+		return false;  
+		}  
+		} 
+	</script>
+	 
+	<style>
+        .subbtn:hover{
+            background-color: black;
+            color: #C2E049;
+        }
+		.bg-img {
+          background-image: url( "{% static 'images/bg3.jpg' %}");
+		  background-repeat: no-repeat;
+		  background-size: cover;
+        }
+    </style>
+</head>
+
+<body  class="bg-img">
+<header>{% include 'login/navbar.html' %}</header>
+
+<section class="form" style="line-height:30px; " id="pay-coin-form">
+	<div class="container my-5">
+		<div class="row pt-5">
+			<div class="col-10 mx-auto pt-4">
+				<div class="card shadow bg-dark">
+					<div class="row justify-content-center">
+						<div class="col-md-8 m-5 ">
+								<h4 class="section-heading font-size-35">Buy Coins</h4>
+								<p class="text-center ">
+									Pay the equivalent amount of money to buy coins.
+								</p>
+
+							</div>
+						</div>
+
+						<form name="cform" class="row g-3 gx-5 justify-content-center px-3" method="post" onsubmit="return validateForm()">
+								{% csrf_token %}
+							<div class="col-md-10">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="alert"style="background-color:#C2E049; color:black; text-align:center;" role="alert">
+                                            <h3><b><span><i class="fas fa-rupee-sign fa-lg"></i></span> 1000 = 1 <span><i class="fab fa-btc fa-lg"></i></span></b></h3>
+											<h6><b>Your wallet address is:</b> {{ user.first_name }}</h6>
+											<!-- <h6><b>Your Public Key is:</b> {{ pkey }}</h6> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+									<div class="col-md-6 mb-3">
+										<label for="amount">Amount to be added</label>
+										<input type="text" name="amount" class="form-control" placeholder="{{ preamt }}" disabled>
+									</div>
+									<div class="col-md-6 mb-3">
+										<label for="amount">Wallet Balance</label>
+										<input type="text" class="form-control" placeholder="{{ userbal }}" disabled>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6 mb-3">
+										<label for="payment-option">Payment</label>
+										<select class="custom-select d-block w-100" id="payment-option" required>
+											<option value="" disabled>Choose..</option>
+											<option>Credit card</option>
+											<option>Debit card</option>
+										</select>
+									</div>
+									<div class="col-md-6 mb-3">
+										<label for="cc-name">Card Number</label>
+										<input type="number" class="form-control" placeholder="" name="cardno" required>
+										<p style="color: rgb(160, 156, 156)" id="errorcardno"></p>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6 mb-3">
+										<label for="cc-name">Name on card</label>
+										<input type="text" class="form-control" id="cc-name" placeholder="" required>
+
+									</div>
+									<div class="col-md-3 mb-3">
+										<label for="cc-expiration">Expiration</label>
+										<input type="month" class="form-control" id="cc-expiration" placeholder="" required>
+
+									</div>
+									<div class="col-md-3 mb-3">
+										<label for="cc-cvv">CVV</label>
+										<input type="password" class="form-control" id="cc-cvv" placeholder="" name="cvv" required>
+										<p style="color: rgb(160, 156, 156)" id="errorcvv"></p>
+									</div>
+								</div>
+								<a href="{% url 'paymentSuccess' %}" class="btn btn-primary btn-lg btn-block mb-5 subbtn"  style="color:black;">Buy Coins</a>
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% include 'login/footer.html' %}
+</body>
+
+</html>

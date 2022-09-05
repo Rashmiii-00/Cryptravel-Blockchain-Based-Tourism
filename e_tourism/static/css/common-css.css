@@ -1,0 +1,17 @@
+.bg-main-green {
+	background-color: #C2E049 !important;
+	color: black !important;
+}
+
+.bg-dark {
+	background-color: black !important;
+	color: #f4f4f4 !important;
+}
+
+.text-light {
+	color: #f4f4f4 !important;
+}
+
+.text-main-green {
+	color: #C2E049 !important;
+}

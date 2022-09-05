@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	{% load static %}
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Travel Yantra</title>
+	<link rel = "icon" href ="{% static 'images/title.jpg' %}" type = "image/x-icon">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<!--	<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' /> -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+	<link href="{% static 'css/accordian.css' %}" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="{% static 'css/nav1.css' %}" media="all">
+	<link href="{% static 'css/styles.css' %}" rel='stylesheet' type='text/css' />
+	<script type="application/x-javascript">
+		addEventListener("load", function() {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+
+	</script>
+	<script>
+		(function($) {
+			'use strict';
+
+			jQuery(document).on('ready', function() {
+
+				$('a.page-scroll').on('click', function(e) {
+					var anchor = $(this);
+					$('html, body').stop().animate({
+						scrollTop: $(anchor.attr('href')).offset().top - 50
+					}, 1500);
+					e.preventDefault();
+				});
+
+			});
+
+
+		})(jQuery);
+
+	</script>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!--start slider -->
+	<link rel="stylesheet" href="{% static 'css/fwslider.css' %}" media="all">
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<script src="{% static 'js/fwslider.js' %}"></script>
+	<!--end slider -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style>
+		.overlay {
+			opacity: 0.3;
+		}
+
+		.bg-img {
+          background-image: url( "{% static 'images/bg3.jpg' %}");
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  height: 100%;
+        }
+
+		.width-100 {
+			width: 100%;
+		}
+
+		.text-center {
+			text-align: center !important;
+		}
+
+		.bg-main-green {
+			background-color: #C2E049 !important;
+			color: black !important;
+		}
+
+		.bg-dark {
+			background-color: black !important;
+			color: #f4f4f4 !important;
+		}
+
+		.text-primary {
+			color: #C2E049 !important;
+		}
+
+		.text-left {
+			text-align: left !important;
+		}
+
+		.text-light{
+			color: #f4f4f4 !important;
+		}
+		
+		.m-b-10 {
+			margin-bottom: 10px;
+		}
+
+		.payment {
+			border: 1px solid #f2f2f2;
+			border-radius: 20px;
+			margin-bottom: 50px;
+			padding-bottom: 30px;
+			background: #fff;
+		}
+
+		.content {
+			padding-left: 30px;
+		}
+
+		.payment_header {
+			background-color: black !important;
+			padding: 20px;
+			border-radius: 20px 20px 0px 0px;
+			color:#C2E049;
+		}
+
+		#payment-sucessfull .check {
+			margin: 0px auto;
+			width: 50px;
+			height: 50px;
+			border-radius: 100%;
+			background: #fff;
+			text-align: center;
+		}
+
+		#payment-sucessfull .check i {
+			vertical-align: middle;
+			line-height: 50px;
+			font-size: 30px;
+		}
+
+		#payment-sucessfull .content {
+			text-align: center;
+		}
+
+		#payment-sucessfull .content h1 {
+			font-size: 25px;
+			padding-top: 25px;
+		}
+
+		#payment-sucessfull .content a.btn {
+			width: 200px;
+			text-decoration: none;
+			height: 45px;
+			color: black !important;
+			/*			padding: 5px 10px;*/
+			font-size: 18px;
+			transition: all ease-in-out 0.3s;
+		}
+
+		#payment-sucessfull .content a:hover {
+			color: #C2E049 !important;
+			text-decoration: none;
+			background: #000;
+		}
+
+		#payment-sucessfull td {
+			border: none;
+		}
+		hr.new1{
+    border: 1px solid #FAEF36;
+}
+
+
+	</style>
+</head>
+
+<body>
+<header>{% include 'login/navbar.html' %}</header>
+	<section id="payment-sucessfull" class="bg-main-green bg-img">
+		<div class="container pt-4">
+			<div class="row">
+				<div class="col-md-8 mx-auto mt-5 px-4 pt-5">
+					<div class="payment shadow bg-dark text-light">
+						<div class="payment_header">
+							<div class="row">
+
+								<div class="col-12 text-center">
+									<h1>Payment Successful !</h1>
+								</div>
+								<div class="col-12">
+									<div class="check" style="background-color: black;">
+										<i class="fa fa-check text-primary" aria-hidden="true"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<hr class="new1">
+						<div class="content pt-5 ">
+							<h4>Payment Details</h4>
+							<table class="table text-left text-light">
+								<tbody>
+
+									<tr>
+										<td>Package Name</td>
+										<td>{{ booked.name }}</td>
+									</tr>
+									<tr>
+										<td>Month Booked</td>
+										<td>{{ month }}</td>
+									</tr>
+									<tr>
+										<td>Amount Paid</td>
+										<td>{{ booked.price }}</td>
+									</tr>
+								</tbody>
+							</table>
+							<a href="{% url 'home' %}" class="btn button btn-primary">OK</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% include 'login/footer.html' %}
+</body>
+
+</html>
